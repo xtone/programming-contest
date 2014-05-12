@@ -10,6 +10,8 @@ When he first saw the gift, he was happy and started playing with them, connecti
 
 The problem is that he currently has **N** sets of connected cars. He can represent each set of connected cars as a string of lowercase letters. He wants to count the number of ways he can connect all **N** sets of cars to form one valid train. A train is valid if all occurrences of the same character are adjacent to each other.
 
+![image](/xtone/programmingcontest/raw/master/20140512_ReorderingTrainCars/reordering_train_carts.png)
+
 The previous figure is one way Yahya could connect the cars "ab", "bc" and "cd" to make a valid train: "ab bc cd". If he had connected them in the order "cd ab bc", that would have been invalid: the "c" characters would not have been adjacent to each other.
 
 You've surely noticed that this is not an easy problem for Yahya to solve, so he needs your help (and he is sure that you will give it!). That's it; go and help Yahya!
