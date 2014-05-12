@@ -47,7 +47,7 @@ The first line of the input gives the number of test cases, **T**. **T** test ca
 
 For each test case, output one line containing "Case #x: y", where x is the test case number (starting from 1) and y is the number of different ways of obtaining a valid train. As this number may be very big, output the number of ways *modulo 1,000,000,007*.
 
-各問題の回答出力は1行で、"Case #x: y"として下さい。xは問題番号(1から始まります)で、yは繋ぎ方のパターン数です。
+各問題の回答出力は1行で、"Case #x: y"として下さい。xは問題番号(1から始まります)で、yは繋ぎ方のパターン数です。ただしyは非常に大きくなる可能性があるので、実際にはパターン数を1,000,000,007で割った余りとして下さい。
 
 ## Limits
 
