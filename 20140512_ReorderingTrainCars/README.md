@@ -30,15 +30,15 @@ You've surely noticed that this is not an easy problem for Yahya to solve, so he
 ヤヒャにはあなたの助けが必要です。そしてヤヒャは貴方が助けてくれると信じています！
 さぁ、ヤヒャを助けてあげて下さい！
 
-注:アルファベットは列車の片側にのみ書かれています。ですので、列車のアルファベットを反転することはできません。
+**注:** アルファベットは列車の片側にのみ書かれています。ですので、列車のアルファベットを反転することはできません。
 例えば、列車に"ab"と書かれていればそれは"ab"であり、"ba"にはなりません。
 
 ## Input
 
 The first line of the input gives the number of test cases, **T**. **T** test cases follow. The first line of each test case contains a single integer **N**, the number of sets of connected cars. The following line contains **N** strings separated by a single space. Every given string represents a set of connected cars and is composed of lowercase English letters only.
 
-最初の1行は問題の数Tを表わします。次にT個の問題が続きます。
-各問題の1行目は1つの数値Nがあり、これは列車の数を表わします。
+最初の1行は問題の数 **T** を表わします。次に **T** 個の問題が続きます。
+各問題の1行目は1つの数値 **N** があり、これは列車の数を表わします。
 各問題の2行目は1つのスペースで区切られた文字列になります。
 これは、各列車のアルファベットを表わします。
 ※アルファベットは小文字の英字です
@@ -54,7 +54,7 @@ For each test case, output one line containing "Case #x: y", where x is the test
 1 ≤ **T** ≤ 100.
 1 ≤ Set of connected **Cars'** lengths ≤ 100.
 
-1 <= T <= 100.
+1 <= **T** <= 100.
 1 <= 1つの列車のアルファベットの長さ <= 100.
 
 ## Small dataset
