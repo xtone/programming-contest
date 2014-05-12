@@ -10,6 +10,12 @@ When he first saw the gift, he was happy and started playing with them, connecti
 
 The problem is that he currently has **N** sets of connected cars. He can represent each set of connected cars as a string of lowercase letters. He wants to count the number of ways he can connect all **N** sets of cars to form one valid train. A train is valid if all occurrences of the same character are adjacent to each other.
 
+ヤヒャは賢い子供で、玩具で遊ぶときはいつも何か面白いことができないか考えています。
+今日は、父親が片面にアルファベットが書かれた列車のセットをくれたので、それで遊ぼうと思っています。
+初めは、列車をただ繋ぐだけで面白かったのですが、すぐに飽きてしまいました。
+そこでN個の列車を繋ぐルールを決めて、何パターンの繋ぐパターンがあるか考える遊びをすることにしました。
+ルールは、書かれたアルファベットを繋げた時に、同じ文字は必ず繋がっている、というものです。
+
 ![image](/xtone/programmingcontest/raw/master/20140512_ReorderingTrainCars/reordering_train_carts.png)
 
 The previous figure is one way Yahya could connect the cars "ab", "bc" and "cd" to make a valid train: "ab bc cd". If he had connected them in the order "cd ab bc", that would have been invalid: the "c" characters would not have been adjacent to each other.
@@ -17,12 +23,6 @@ The previous figure is one way Yahya could connect the cars "ab", "bc" and "cd" 
 You've surely noticed that this is not an easy problem for Yahya to solve, so he needs your help (and he is sure that you will give it!). That's it; go and help Yahya!
 
 **Note:** letters are written only on one side of the cars, so you can not reverse them. For example, if a car has "ab" written on it, it could not be changed to read "ba".
-
-ヤヒャは賢い子供で、玩具で遊ぶときはいつも何か面白いことができないか考えています。
-今日は、父親が片面にアルファベットが書かれた列車のセットをくれたので、それで遊ぼうと思っています。
-初めは、列車をただ繋ぐだけで面白かったのですが、すぐに飽きてしまいました。
-そこでN個の列車を繋ぐルールを決めて、何パターンの繋ぐパターンがあるか考える遊びをすることにしました。
-ルールは、書かれたアルファベットを繋げた時に、同じ文字は必ず繋がっている、というものです。
 
 例えば、"ab"、"bc"、"cd"と書かれた列車があるとすると、"ab bc cd"はルール通りの繋ぎ方になります。
 もし、"cd ab bc"と繋ぐと、cが繋がっていないので、ルールに反した繋ぎ方になります。
