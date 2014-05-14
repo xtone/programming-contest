@@ -26,10 +26,6 @@ Your program should determine which card the volunteer chose; or if there is mor
 あなたのプログラムはどのカードが観客が選んだカードかを判定します。
 この判定結果には1～16の他に、観客が選んだ可能性があるカードが1枚にならない場合(マジシャンが失敗した)や、観客が選んだ可能性のあるカードが無い(観客が嘘をついた)場合があります。
 
-## Solving this problem
-
-Usually, Google Code Jam problems have 1 Small input and 1 Large input. This problem has only **1 Small input**. Once you have solved the Small input, you have finished solving this problem.
-
 ## Input
 
 The first line of the input gives the number of test cases, **T**. **T** test cases follow. Each test case starts with a line containing an integer: the answer to the first question. The next 4 lines represent the first arrangement of the cards: each contains 4 integers, separated by a single space. The next line contains the answer to the second question, and the following four lines contain the second arrangement in the same format.
