@@ -45,7 +45,7 @@ def create_candidate(puts, n, m):
     return set(candidates)
 
 
-def can_remove(candidate, puts):
+def remove_enclosed(candidate, puts):
     removed = False
     pc = (candidate[0] - 1, candidate[1])
     if pc in puts:
@@ -74,7 +74,7 @@ def can_remove(candidate, puts):
     return removed
 
 
-def max_neighbor(candidate, puts, n, m):
+def score_neighbor(candidate, puts, n, m):
     tnc = 0
     pc = (candidate[0] - 1, candidate[1])
     nc = 0
@@ -126,7 +126,7 @@ def max_neighbor(candidate, puts, n, m):
 def score(candidate, puts, n, m):
     x = n / 2 - candidate[0]
     y = m / 2 - candidate[1]
-    return max_neighbor(candidate, puts, n, m), (x * x) + (y * y)
+    return score_neighbor(candidate, puts, n, m), (x * x) + (y * y)
 
 
 def eval_score(candidates, puts, n, m):
@@ -147,7 +147,7 @@ def eval_score(candidates, puts, n, m):
                 last_ss = ss
                 cc = c
 
-    can_remove(cc, puts)
+    remove_enclosed(cc, puts)
     return cc
 
 
