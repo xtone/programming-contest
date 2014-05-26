@@ -6,7 +6,7 @@
 
 *Cookie Clicker* is a Javascript game by Orteil, where players click on a picture of a giant cookie. Clicking on the giant cookie gives them cookies. They can spend those cookies to buy buildings. Those buildings help them get even more cookies. Like this problem, the game is very cookie-focused. This problem has a similar idea, but it does not assume you have played *Cookie Clicker*. Please don't go play it now: it might be a long time before you come back.
 
-*Cookie Clicker* はOrteilが作成した、大きなクッキーの絵をクリックするという、Javascrip製のゲームです。大きなクッキーをクリックすると、プレイヤーはクッキー(得点)を得ることができます。また得たクッキーを使って、建物を建てることができます。建物はさらにクッキーを得るための様々な効果をもっています。この問題と同様に、オリジナルのゲームもクッキーに大注目しているのです。さて、この問題は似たようなアイデアで作られていますが、*Cookie Clicker* をプレイする必要はありません。また、今 *Cookie Clicke* をプレイしないで下さい。さもないとこの問題に戻ってこれなくなります。
+*Cookie Clicker* はOrteilが作成した、大きなクッキーの絵をクリックするという、Javascrip製のゲームです。大きなクッキーをクリックすると、プレイヤーはクッキー(得点)を得ることができます。また得たクッキーを使って、建物を建てることができます。建物はさらにクッキーを得るための様々な効果をもっています。この問題と同様に、オリジナルのゲームもクッキーに大注目しているのです。さて、この問題は似たようなアイデアで作られていますが、 *Cookie Clicker* をプレイする必要はありません。また、今 *Cookie Clicker* をプレイしないで下さい。さもないとこの問題に戻ってこれなくなります。
 
 ## Problem
 
@@ -22,7 +22,7 @@ Once you have **X** cookies that you haven't spent on farms, you win! Figure out
 
 Suppose **C**=500.0, **F**=4.0 and **X**=2000.0. Here's how the best possible strategy plays out:
 
-例では、**C**=500.0, **F**=4.0 and **X**=2000.0 であるとします。この場合の最高の戦略は以下の通りです。
+例では、 **C**=500.0、 **F**=4.0、 **X**=2000.0 であるとします。この場合の最高の戦略は以下の通りです。
 
 1. You start with 0 cookies, but producing 2 cookies per second.
 2. After **250** seconds, you will have **C**=500 cookies and can buy a farm that produces **F**=4 cookies per second.
@@ -36,13 +36,13 @@ Suppose **C**=500.0, **F**=4.0 and **X**=2000.0. Here's how the best possible st
 　
 
 1. まず0枚のクッキーからスタートします。この時点で秒間2枚のクッキーを得られます。
-2. **250** 秒後に、500枚のクッキーを得て、**C**=500 となります。そこでクッキーファームを購入し。追加で秒間 **F**=4 枚のクッキーを得るようになります。
+2. **250** 秒後に、500枚のクッキーを得て、 **C**=500 となります。そこでクッキーファームを購入し。追加で秒間 **F**=4 枚のクッキーを得るようになります。
 3. クッキーファームを購入した時点で、あなたは0枚のクッキーを持っていて、秒間6枚のクッキーを得るようになっています。
 4. 次のクッキーファームを購入するには500枚のクッキーが必要なので、さらに **83.3333333** 秒待つ必要があります。
 5. 2つ目のクッキーファームを購入すると、あなたは0枚のクッキーを持っていて、秒間10枚のクッキーを得るようになっています。
-6. さらに次のクッキーファームを購入するには、**50** 秒待つ必要があります。
+6. さらに次のクッキーファームを購入するには、 **50** 秒待つ必要があります。
 7. 3つ目のクッキーファームを購入すると、あなたは0枚のクッキーを持っていて、秒間14枚のクッキーを得るようになっています。
-8. さらに次のクッキーファームを買うこともできますが、最高の戦略ではないのでもう購入しません。代わりに、**X**=2000 枚のクッキーができるまで **142.8571429** 秒待ちます。
+8. さらに次のクッキーファームを買うこともできますが、最高の戦略ではないのでもう購入しません。代わりに、 **X**=2000 枚のクッキーができるまで **142.8571429** 秒待ちます。
 
 Total time: 250 + 83.3333333 + 50 + 142.8571429 = 526.1904762 seconds.
 Notice that you get cookies continuously: so 0.1 seconds after the game starts you'll have 0.2 cookies, and π seconds after the game starts you'll have 2π cookies.
@@ -54,7 +54,7 @@ Notice that you get cookies continuously: so 0.1 seconds after the game starts y
 
 The first line of the input gives the number of test cases, **T**. **T** lines follow. Each line contains three space-separated real-valued numbers: **C**, **F** and **X**, whose meanings are described earlier in the problem statement.
 
-最初の行はテストケースの数 **T** が書いてあります。以下 **T** が続きます。各行には、3つの実数がスペース区切りで書かれています。**C** と **F** と **X** で、意味は前述の通りです。
+最初の行はテストケースの数 **T** が書いてあります。以下 **T** が続きます。各行には、3つの実数がスペース区切りで書かれています。 **C** と **F** と **X** で、意味は前述の通りです。
 
 **C**, **F** and **X** will each consist of at least 1 digit followed by 1 decimal point followed by from 1 to 5 digits. There will be no leading zeroes.
 
