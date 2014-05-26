@@ -32,7 +32,9 @@ Suppose **C**=500.0, **F**=4.0 and **X**=2000.0. Here's how the best possible st
 6. Another farm will cost 500 cookies, which you can buy after **50** seconds.
 7. After buying your third farm, you have 0 cookies, and your total cookie production is 14 cookies per second.
 8. Another farm would cost 500 cookies, but it actually makes sense not to buy it: instead you can just wait until you have **X**=2000 cookies, which takes about **142.8571429** seconds.
+
 　
+
 1. まず0枚のクッキーからスタートします。この時点で秒間2枚のクッキーを得られます。
 2. **250** 秒後に、500枚のクッキーを得て、**C**=500 となります。そこでクッキーファームを購入し。追加で秒間 **F**=4 枚のクッキーを得るようになります。
 3. クッキーファームを購入した時点で、あなたは0枚のクッキーを持っていて、秒間6枚のクッキーを得るようになっています。
