@@ -12,7 +12,7 @@
 
 In this problem, you start with 0 cookies. You gain cookies at a rate of 2 cookies per second, by clicking on a giant cookie. Any time you have at least **C** cookies, you can buy a cookie farm. Every time you buy a cookie farm, it costs you **C** cookies and gives you an extra **F** cookies per second.
 
-この問題では、あなたは0枚のクッキーを持っている状態でスタートします。あなたは大きなクッキーの絵をクリックすることで、1秒間に2枚のクッキーを得ることができます。また、**C** 枚のクッキーを持っていれば、クッキーファームを買うことができます。クッキーファームを買うと、**C** 枚のクッキーを支払うことになりますが、毎秒追加で **F** 枚のクッキーを得ることができるようになります。
+この問題では、あなたは0枚のクッキーを持っている状態でスタートします。あなたは大きなクッキーの絵をクリックすることで、1秒間に2枚のクッキーを得ることができます。また、 **C** 枚のクッキーを持っていれば、クッキーファームを買うことができます。クッキーファームを買うと、**C** 枚のクッキーを支払うことになりますが、毎秒追加で **F** 枚のクッキーを得ることができるようになります。
 
 Once you have **X** cookies that you haven't spent on farms, you win! Figure out how long it will take you to win if you use the best possible strategy.
 
