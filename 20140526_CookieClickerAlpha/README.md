@@ -6,13 +6,13 @@
 
 *Cookie Clicker* is a Javascript game by Orteil, where players click on a picture of a giant cookie. Clicking on the giant cookie gives them cookies. They can spend those cookies to buy buildings. Those buildings help them get even more cookies. Like this problem, the game is very cookie-focused. This problem has a similar idea, but it does not assume you have played *Cookie Clicker*. Please don't go play it now: it might be a long time before you come back.
 
-*Cookie Clicker* はOrteilが作成した、大きなクッキーの絵をクリックするという、Javascrip製のゲームです。大きなクッキーをクリックすると、プレイヤーはクッキー(得点)を得ることができます。また得たクッキーを使って、建物を建てることができます。建物はさらにクッキーを得るための様々な効果をもっています。この問題と同様に、オリジナルのゲームもクッキーに大注目しているのです。さて、この問題は似たようなアイデアで作られていますが、 *Cookie Clicker* をプレイする必要はありません。また、今 *Cookie Clicker* をプレイしないで下さい。さもないとこの問題に戻ってこれなくなります。
+*Cookie Clicker* はOrteilが作成した、大きなクッキーの絵をクリックするという、Javascript製のゲームです。大きなクッキーをクリックすると、プレイヤーはクッキー(得点)を得ることができます。また得たクッキーを使って、建物を建てることができます。建物はさらにクッキーを得るための様々な効果をもっています。この問題と同様に、オリジナルのゲームもクッキーに大注目しているのです。さて、この問題は似たようなアイデアで作られていますが、 *Cookie Clicker* をプレイする必要はありません。また、今 *Cookie Clicker* をプレイしないで下さい。さもないとこの問題に戻ってこれなくなります。
 
 ## Problem
 
 In this problem, you start with 0 cookies. You gain cookies at a rate of 2 cookies per second, by clicking on a giant cookie. Any time you have at least **C** cookies, you can buy a cookie farm. Every time you buy a cookie farm, it costs you **C** cookies and gives you an extra **F** cookies per second.
 
-この問題では、あなたは0枚のクッキーを持っている状態でスタートします。あなたは大きなクッキーの絵をクリックすることで、1秒間に2枚のクッキーを得ることができます。また、 **C** 枚のクッキーを持っていれば、クッキーファームを買うことができます。クッキーファームを買うと、 **C** 枚のクッキーを支払うことになりますが、毎秒追加で **F** 枚のクッキーを得ることができるようになります。
+この問題では、ゲーム開始時のあなたのクッキーの所持数は0枚です。あなたは大きなクッキーの絵をクリックすることで、1秒間に2枚のクッキーを得ることができます。また、 **C** 枚のクッキーを持っていれば、クッキーファームを買うことができます。クッキーファームを買うと、 **C** 枚のクッキーを支払うことになりますが、毎秒追加で **F** 枚のクッキーを得ることができるようになります。
 
 Once you have **X** cookies that you haven't spent on farms, you win! Figure out how long it will take you to win if you use the best possible strategy.
 
