@@ -54,11 +54,11 @@ Notice that you get cookies continuously: so 0.1 seconds after the game starts y
 
 The first line of the input gives the number of test cases, **T**. **T** lines follow. Each line contains three space-separated real-valued numbers: **C**, **F** and **X**, whose meanings are described earlier in the problem statement.
 
-最初の行はテストケースの数 **T** が書いてあります。以下 **T** が続きます。各行には、3つの実数がスペース区切りで書かれています。 **C** と **F** と **X** で、意味は前述の通りです。
+最初の行はテストケースの数 **T** が書いてあります。以下 **T** 行が続きます。各行には、3つの実数がスペース区切りで書かれています。 **C** と **F** と **X** で、意味は前述の通りです。
 
 **C**, **F** and **X** will each consist of at least 1 digit followed by 1 decimal point followed by from 1 to 5 digits. There will be no leading zeroes.
 
-**C** と **F** と **X** は1桁以上の整数部と、1～5桁小数部からなります。0パディングはありません。
+**C** と **F** と **X** は1桁以上の整数部と、1～5桁の小数部からなります。ゼロパディングはありません。
 
 ## Output
 
@@ -66,7 +66,7 @@ For each test case, output one line containing "Case #x: y", where x is the test
 
 各テストケースについて、1行で "Case #x: y" と出力してください。x は1から始まるテストケース番号、yはあなたが美味しい **X** 枚のクッキーを得るまでに要する最短の時間(秒)です。
 
-We recommend outputting y to 7 decimal places, but it is not required. y will be considered correct if it is close enough to the correct number: within an absolute or relative error of 10<sup>-6</sup>. See the FAQ for an explanation of what that means, and what formats of real numbers we accept.
+We recommend outputting y to 7 decimal places, but it is not required. y will be considered correct if it is close enough to the correct number: within an absolute or relative error of 10<sup>-6</sup>. See the [FAQ](https://code.google.com/codejam/faq.html#floating_point) for an explanation of what that means, and what formats of real numbers we accept.
 
 yは有効数値7桁で表記することを推奨しますが、必須ではありません。絶対的または相対的な誤差が10の-6乗の範囲に収まっていれば正解と見做します。
 
