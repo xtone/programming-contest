@@ -13,14 +13,17 @@ class CookieClickerAlpha
     end
   end
 
+  private
+
   # 問題を解く
   # @param [Float] c クッキーファームを購入するのに必要なクッキー枚数
   # @param [Float] f クッキーファームにより加算される毎秒加算クッキー枚数
   # @param [Float] x 勝利条件のクッキー枚数
+  # @return [Float] クリアまでにかかる時間(s)
   def solve(c, f, x)
-    gain = 2.0
     goal_time = 0.0
-    while clearing_condition(c, f, x, gain)
+    gain = 2.0
+    while cookie_farm_beneficial?(c, f, x, gain)
       goal_time += c / gain
       gain += f
     end
@@ -33,7 +36,7 @@ class CookieClickerAlpha
   # @param [Float] x 勝利条件のクッキー枚数
   # @param [Float] gain 1秒あたりに得られるクッキー枚数
   # @return [Boolean] クッキーファームを追加した方がクリア時間が短くなるならtrue
-  def clearing_condition(c, f, x, gain)
+  def cookie_farm_beneficial?(c, f, x, gain)
     c / gain + x / (gain + f) < x / gain
   end
 
