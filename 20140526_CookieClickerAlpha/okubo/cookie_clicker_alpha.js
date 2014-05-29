@@ -11,20 +11,16 @@ CookieClicker.prototype.trial = function(cookieFarmBuyPlan) {
   var seconds = 0;
   var cookieCount = 0;
   var cookieCountPerSecond = 2 / scale;
-  var f = this.f / scale;
-  do {
-    seconds++;
-    cookieCount = cookieCount + cookieCountPerSecond;
-    //console.log("seconds: " + seconds + " cookieFarmBuyPlan: " + cookieFarmBuyPlan + " cookieCount:" + cookieCount + " cookieCountPerSecond:" + cookieCountPerSecond);
-    if (cookieFarmBuyPlan == 0 && cookieCount >= this.x) {
-      loop = false;
-    } else if (cookieFarmBuyPlan > 0 && cookieCount >= this.c) {
-      cookieCount = cookieCount - this.c;
-      cookieCountPerSecond = cookieCountPerSecond + f;
-      cookieFarmBuyPlan--;
-    }
-  } while (loop);
-  return seconds / scale;
+  var farmCookieCountPerSecond = this.f / scale;
+
+  for(var farmCount = 1; farmCount < cookieFarmBuyPlan + 1; farmCount++) {
+    var farmSecondes = this.c / cookieCountPerSecond;
+    seconds += farmSecondes;
+    cookieCountPerSecond += farmCookieCountPerSecond;
+  }
+  seconds += this.x / cookieCountPerSecond;
+
+ return seconds / scale;
 }
 CookieClicker.prototype.solve = function() {
   var loop = true;
@@ -61,9 +57,8 @@ for (var i = 0; i < count; i++) {
   var c = parseFloat(cfx[0]);
   var f = parseFloat(cfx[1]);
   var x = parseFloat(cfx[2]);
-  console.log(c, f, x);
+
   var cc = new CookieClicker(c, f, x);
   var seconds = cc.solve();
   console.log("Case #" + caseNo +": " + seconds.toFixed(7));
-  console.log("---");
 }
