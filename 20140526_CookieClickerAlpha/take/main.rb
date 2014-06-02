@@ -16,7 +16,7 @@ cases.each{|c|
   farm_production = c[1]
   goal = c[2]
 
-  last_farm_count = 0
+  want_farm_count = 0
   farm_count = 0
   time = 0.0
   ot = Float::MAX
@@ -24,7 +24,7 @@ cases.each{|c|
 
   while true
     while true
-      if farm_count >= last_farm_count
+      if farm_count >= want_farm_count
         tmp = goal / (2 + farm_production * farm_count)
         time += tmp
         break
@@ -38,7 +38,7 @@ cases.each{|c|
 
     if time < ot
       ot = time
-      last_farm_count += 1
+      want_farm_count += 1
       time = lastT
     else
       time = ot
