@@ -12,25 +12,25 @@ open( ARGV[0] ) {|f|
 i = 0
 cases.each{|c|
   i+=1
-  factory_cost = c[0]
-  factory_production = c[1]
+  farm_cost = c[0]
+  farm_production = c[1]
   goal = c[2]
 
-  fc = 0
-  factory_count = 0
+  last_farm_count = 0
+  farm_count = 0
   time = 0.0
   ot = Float::MAX
   lastT = 0.0
 
   while true
     while true
-      if factory_count >= fc
-        tmp = goal / (2 + factory_production * factory_count)
+      if farm_count >= last_farm_count
+        tmp = goal / (2 + farm_production * farm_count)
         time += tmp
         break
       else
-        tmp = factory_cost / (2 + factory_production * factory_count)
-        factory_count += 1
+        tmp = farm_cost / (2 + farm_production * farm_count)
+        farm_count += 1
         time += tmp
         lastT = time
       end
@@ -38,7 +38,7 @@ cases.each{|c|
 
     if time < ot
       ot = time
-      fc += 1
+      last_farm_count += 1
       time = lastT
     else
       time = ot
