@@ -14,9 +14,9 @@ Being part Elf works the way you probably expect. People who are Elves, Humans a
 もし、片方の親がA/Bエルフで、もう片方の親がC/Dエルフだとします。すると赤ちゃんは(A/B + C/D) / 2エルフになります。
 例えば、0/1エルフ(=人間)と、1/2エルフから生まれる赤ちゃんは1/4エルフになります。
 
-Vida is certain about one thing: 40 generations ago, she had 240 different ancestors, and each one of them was 1/1 Elf or 0/1 Elf.
+Vida is certain about one thing: 40 generations ago, she had 2 ^ 40 different ancestors, and each one of them was 1/1 Elf or 0/1 Elf.
 
-ヴィダは、40世代前に240の異なる祖先がいて、それぞれが1/1エルフ(=エルフ)か0/1エルフであったことを知っています。
+ヴィダは、40世代前に2 ^ 40の異なる祖先がいて、それぞれが1/1エルフ(=エルフ)か0/1エルフであったことを知っています。
 
 Vida says she's **P** / **Q** Elf. Tell her what is the minimum number of generations ago that there could have been a 1/1 Elf in her family. If it is not possible for her to be **P** / **Q** Elf, tell her that she must be wrong!
 
