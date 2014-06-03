@@ -44,10 +44,14 @@ For each test case, output one line containing "Case #x: y", where x is the test
 1 ≤ **P** < **Q** ≤ 1000.
 **P** and **Q** have no common factors. That means **P** / **Q** is a fraction in lowest terms.
 
+**P** と **Q** の公約数は存在しません。つまり **P** / **Q** は約分されている分数です。
+
 ## Large dataset
 
 1 ≤ **P** < **Q** ≤ 10^12 .
 **P** and **Q** may have common factors. **P** / **Q** is not guaranteed to be a fraction in lowest terms.
+
+**P** と **Q** は公約数が存在する可能性があります。 **P** / **Q** が約分された分数であることは保証されていません。
 
 ## Smaple
 
