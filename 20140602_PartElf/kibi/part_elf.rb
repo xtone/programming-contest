@@ -6,9 +6,9 @@ class PartElf
   def execute
     File.open @input_file_path, 'r' do |io|
       # 1行目にテストケースの数が書いてある
-      io.gets.to_i.times do |i|
+      (1..io.gets.to_i).each do |i|
         generation = solve *io.gets.split('/').map{ |item| item.to_i }
-        output i+1, generation
+        output i, generation
       end
     end
   end

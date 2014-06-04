@@ -38,10 +38,10 @@ There are no mines adjacent to the clicked cell, so when it is revealed, it beco
 ```
 
 At this point, there are still un-revealed cells that do not contain mines (denoted by '.' characters), so the player has to click again in order to continue the game.
-You want to win the game as quickly as possible. There is nothing quicker than winning in one click. Given the size of the board (R x C) and the number of hidden mines M, is it possible (however unlikely) to win in one click? You may choose where you click. If it is possible, then print any valid mine configuration and the coordinates of your click, following the specifications in the Output section. Otherwise, print "Impossible".
+You want to win the game as quickly as possible. There is nothing quicker than winning in one click. Given the size of the board (**R** x **C**) and the number of hidden mines **M**, is it possible (however unlikely) to win in one click? You may choose where you click. If it is possible, then print any valid mine configuration and the coordinates of your click, following the specifications in the Output section. Otherwise, print "Impossible".
 
 この時点で、地雷ではないまだ開かれていないマス目があります('.' で表わされます)。ですので、あなたは次のマス目を選ぶことになります。
-さて、あなたはこのゲームに可能な限り早く勝ちたいと思っています。このゲームに勝つのに、1手より早い手はありません。盤面のサイズ(R x C)と隠された地雷の数 M が与えられたとき、1回の選択で勝つことができるでしょうか？あなたは、どのマス目を開くか好きに選ぶことができます。
+さて、あなたはこのゲームに可能な限り早く勝ちたいと思っています。このゲームに勝つのに、1手より早い手はありません。盤面のサイズ(**R** x **C**)と隠された地雷の数 **M** が与えられたとき、1回の選択で勝つことができるでしょうか？あなたは、どのマス目を開くか好きに選ぶことができます。
 もし1回の選択で勝てる可能性があれば、その可能性がある盤面と最初に選ぶマス目を、後に示すフォーマットで表示してください。
 もし1回の選択で勝てる可能性がなければ、Impossibleと表示して下さい。
 
