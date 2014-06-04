@@ -7,7 +7,7 @@
 *Minesweeper* is a computer game that became popular in the 1980s, and is still included in some versions of the *Microsoft Windows* operating system. This problem has a similar idea, but it does not assume you have played *Minesweeper*.
 
 *Minesweeper* は1980年代に有名になったコンピュータゲームで、 *Microsoft Windows* についてくる場合もあります。
-この問題は *Minsweeper* のアイデアを使っていますが、プレイ経験を前提にはしていません。
+この問題は *Minesweeper* のアイデアを使っていますが、プレイ経験を前提にはしていません。
 
 In this problem, you are playing a game on a grid of identical cells. The content of each cell is initially hidden. There are **M** mines hidden in **M** different cells of the grid. No other cells contain mines. You may click on any cell to reveal it. If the revealed cell contains a mine, then the game is over, and you lose. Otherwise, the revealed cell will contain a digit between 0 and 8, inclusive, which corresponds to the number of neighboring cells that contain mines. Two cells are neighbors if they share a corner or an edge. Additionally, if the revealed cell contains a 0, then all of the neighbors of the revealed cell are automatically revealed as well, recursively. When all the cells that don't contain mines have been revealed, the game ends, and you win.
 
@@ -38,10 +38,10 @@ There are no mines adjacent to the clicked cell, so when it is revealed, it beco
 ```
 
 At this point, there are still un-revealed cells that do not contain mines (denoted by '.' characters), so the player has to click again in order to continue the game.
-You want to win the game as quickly as possible. There is nothing quicker than winning in one click. Given the size of the board (**R** x **C**) and the number of hidden mines **M**, is it possible (however unlikely) to win in one click? You may choose where you click. If it is possible, then print any valid mine configuration and the coordinates of your click, following the specifications in the Output section. Otherwise, print "Impossible".
+You want to win the game as quickly as possible. There is nothing quicker than winning in one click. Given the size of the board ( **R** x **C** ) and the number of hidden mines **M**, is it possible (however unlikely) to win in one click? You may choose where you click. If it is possible, then print any valid mine configuration and the coordinates of your click, following the specifications in the Output section. Otherwise, print "Impossible".
 
 この時点で、地雷ではないまだ開かれていないマス目があります('.' で表わされます)。ですので、あなたは次のマス目を選ぶことになります。
-さて、あなたはこのゲームに可能な限り早く勝ちたいと思っています。このゲームに勝つのに、1手より早い手はありません。盤面のサイズ(**R** x **C**)と隠された地雷の数 **M** が与えられたとき、1回の選択で勝つことができるでしょうか？あなたは、どのマス目を開くか好きに選ぶことができます。
+さて、あなたはこのゲームに可能な限り早く勝ちたいと思っています。このゲームに勝つのに、1手より早い手はありません。盤面のサイズ( **R** x **C** )と隠された地雷の数 **M** が与えられたとき、1回の選択で勝つことができるでしょうか？あなたは、どのマス目を開くか好きに選ぶことができます。
 もし1回の選択で勝てる可能性があれば、その可能性がある盤面と最初に選ぶマス目を、後に示すフォーマットで表示してください。
 もし1回の選択で勝てる可能性がなければ、Impossibleと表示して下さい。
 
