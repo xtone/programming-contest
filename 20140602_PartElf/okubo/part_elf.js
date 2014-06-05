@@ -21,9 +21,7 @@ PartElf.prototype.solve = function() {
         tempGenerationNo = generationNo;
       }
       rat = rat.subtract(1);
-    }
-
-    if (generationNo >= this.maxGenerationNo) {
+    } else if (generationNo >= this.maxGenerationNo) {
       loop = false;
       tempGenerationNo = 0;
       generationNo = -1;
