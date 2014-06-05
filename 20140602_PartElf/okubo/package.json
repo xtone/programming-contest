@@ -1,0 +1,14 @@
+{
+  "name": "PartElf",
+  "version": "0.0.0",
+  "description": "",
+  "main": "part_elf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sosuke Okubo",
+  "license": "ISC",
+  "devDependencies": {
+    "big-rational": "~0.9.6"
+  }
+}
