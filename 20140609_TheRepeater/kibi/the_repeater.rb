@@ -26,20 +26,18 @@ class TheRepeater
   # @return [Integer | nil] 勝利するために必要な手数
   def solve(strings, n)
     shortest_string = strings[0].squeeze
-    counts = Array.new
+    m = shortest_string.length
+    chars_length = Array.new
     number_of_moves = 0
     strings.each do |string|
+      # squeeze が一致しないものは解決不可
       return nil unless shortest_string == string.squeeze
-      counts << count_continuing_chars_length(string)
+      chars_length << count_continuing_chars_length(string)
     end
-    shortest_string.length.times do |i|
-      tmp_array = []
+    medians = median_row chars_length, m, n
+    m.times do |i|
       n.times do |j|
-        tmp_array << counts[j][i]
-      end
-      average = tmp_array.average.ceil
-      n.times do |j|
-        number_of_moves += (counts[j][i] - average).abs
+        number_of_moves += (chars_length[j][i] - medians[i].round).abs
       end
     end
     number_of_moves
@@ -64,6 +62,23 @@ class TheRepeater
     counts
   end
 
+  # col行row列の数値要素をもつ2次元配列の、列ごとの中央値を求める
+  # @param [Array] array
+  # @param [Integer] col
+  # @param [Integer] row
+  # @return [Array] 列ごとの中央値
+  def median_row(array, col, row)
+    median = []
+    col.times do |i|
+      tmp_array = []
+      row.times do |j|
+        tmp_array << array[j][i]
+      end
+      median << tmp_array.median
+    end
+    median
+  end
+
   def output(case_id, number_of_moves)
     number_of_moves ||= 'Fegla Won'
     print "Case ##{case_id}: #{number_of_moves}\n"
@@ -72,10 +87,16 @@ end
 
 
 class Array
-  # 配列の全要素の平均値を求める
-  # @return [Float]
-  def average
-    inject(0.0){ |sum, i| sum += i } / size
+  # 数列の中央値を求める
+  # @return [Float] 中央値
+  def median
+    array = self.sort
+    quotient, remainder = size.divmod 2
+    if remainder == 0
+      (array[quotient-1] + array[quotient]) / 2.0
+    else
+      array[quotient]
+    end
   end
 end
 
