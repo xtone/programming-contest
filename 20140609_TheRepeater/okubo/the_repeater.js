@@ -42,15 +42,9 @@ TheRepeater.prototype.getReferenceCharacter = function(total) {
   }
 }
 TheRepeater.prototype.countTotal = function(index) {
-  var cs = [];
-  for(var j = 0; j < this.questions.length; j++) {
-    var c = this.questions[j][index];
-    cs.push(c);
-  }
-
   var total = {};
-  for(var k = 0; k < cs.length; k++) {
-    var c = cs[k];
+  for(var i = 0; i < this.questions.length; i++) {
+    var c = this.questions[i][index];
     if(total[c] != null) {
       total[c]++;
     } else {
@@ -155,9 +149,5 @@ for (var i = 0; i < count; i++) {
   }
 
   cursor = cursor + questionCount;
-
-  if (caseNo == 2) {
-//    break;
-  }
 }
 
