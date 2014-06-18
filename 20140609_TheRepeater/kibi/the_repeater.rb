@@ -23,11 +23,11 @@ class TheRepeater
   # 問題を解く
   # @param [Array] strings 課題となる文字列群
   # @param [Integer] n 課題となる文字列の数
-  # @return [Integer | nil] 勝利するために必要な手数
+  # @return [Integer | nil] 勝利するために必要な手数, 勝利できない場合はnil
   def solve(strings, n)
     shortest_string = strings[0].squeeze
     m = shortest_string.length
-    chars_length = Array.new
+    chars_length = []
     number_of_moves = 0
     strings.each do |string|
       # squeeze が一致しないものは解決不可
@@ -35,6 +35,9 @@ class TheRepeater
       chars_length << count_continuing_chars_length(string)
     end
     medians = median_row chars_length, m, n
+    # 文字列を構成する文字種ごとに、手数を計算する。
+    # 文字数を一致させるための最少手数は、
+    # 「現在の文字列内の文字数」と「全文字列内の文字数の中央値」の差の絶対値を取ることで求められる。
     m.times do |i|
       n.times do |j|
         number_of_moves += (chars_length[j][i] - medians[i].round).abs
@@ -44,6 +47,8 @@ class TheRepeater
   end
 
   # 文字列中に連続する同じ文字の数を数える
+  # @example
+  #   "abbcddd" #=> [1,2,1,3]
   # @param [String] string 文字列
   # @return [Array] 連続する数
   def count_continuing_chars_length(string)
@@ -63,6 +68,8 @@ class TheRepeater
   end
 
   # col行row列の数値要素をもつ2次元配列の、列ごとの中央値を求める
+  # @example
+  #   [[2,4,3], [3,7,1], [4,2,9]] #=> [3,4,3]
   # @param [Array] array
   # @param [Integer] col
   # @param [Integer] row
