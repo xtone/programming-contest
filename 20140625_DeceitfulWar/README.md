@@ -17,9 +17,7 @@ Naomi and Ken sometimes play games together. Before they play, each of them gets
 Naomi has realized three things about War. First, she has realized that she loses a lot. Second, she has realized that there is a unique strategy that Ken can follow to maximize his points without assuming anything about Naomi's strategy, and that Ken always uses it. Third, she has realized that she hates to lose. Naomi has decided that instead of playing War, she will play a game she calls Deceitful War. The great thing about Deceitful War is that Ken will think they're playing War!
 
 Here is how Deceitful War works, with differences between Deceitful War and War in bold:
-
 　
-
 1. Each player weighs each of his or her own blocks. **Naomi also weighs Ken's blocks while he isn't looking, so Naomi knows the weights of all blocks** and Ken only knows the weights of his own blocks.
 2. They repeat the following process **N** times:
   1. Naomi chooses one of her own blocks, with mass ChosenNaomi.
@@ -51,7 +49,7 @@ Each of the masses given to Ken and Naomi will be represented as a 0, followed b
 
 ## Output
 
-For each test case, output one line containing "Case #**x**: **y** **z**", where x is the test case number (starting from 1), y is the number of points Naomi will score if she plays Deceitful War optimally, and **z** is the number of points Naomi will score if she plays War optimally.
+For each test case, output one line containing "Case # **x**: **y** **z**", where x is the test case number (starting from 1), y is the number of points Naomi will score if she plays Deceitful War optimally, and **z** is the number of points Naomi will score if she plays War optimally.
 
 ## Limits
 
