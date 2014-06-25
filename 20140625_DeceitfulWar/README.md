@@ -8,9 +8,9 @@ Naomi and Ken sometimes play games together. Before they play, each of them gets
 
 1. Each player weighs each of his or her own blocks, so each player knows the weights of all of his or her own blocks, but not the weights of the other player's blocks.
 2. They repeat the following process **N** times:
-  1. Naomi chooses one of her own blocks, with mass Chosen~Naomi.
+  1. Naomi chooses one of her own blocks, with mass Chosen~Naomi~.
   2. Naomi tells Ken the mass of the block she chose.
-  3. Ken chooses one of his own blocks, with mass Chosen~Ken.
+  3. Ken chooses one of his own blocks, with mass Chosen~Ken~.
   4. They each put their block on one side of a [balance scale](https://www.google.com/search?q=balance+scale&tbm=isch), and the person whose block is heavier gets one point.
   5. Both blocks are destroyed in a fire.
 
@@ -20,16 +20,16 @@ Here is how Deceitful War works, with differences between Deceitful War and War 
 　
 1. Each player weighs each of his or her own blocks. **Naomi also weighs Ken's blocks while he isn't looking, so Naomi knows the weights of all blocks** and Ken only knows the weights of his own blocks.
 2. They repeat the following process **N** times:
-  1. Naomi chooses one of her own blocks, with mass Chosen~Naomi.
-  2. Naomi tells Ken **a number, Told~Naomi, between 0.0kg and 1.0kg exclusive.** Ken, who thinks they're playing War, thinks the number Naomi just told him is Chosen~Naomi.
-  3. Ken chooses one of his own blocks, with mass Chosen~Ken.
+  1. Naomi chooses one of her own blocks, with mass Chosen~Naomi~.
+  2. Naomi tells Ken **a number, Told~Naomi~, between 0.0kg and 1.0kg exclusive.** Ken, who thinks they're playing War, thinks the number Naomi just told him is Chosen~Naomi~.
+  3. Ken chooses one of his own blocks, with mass Chosen~Ken~.
   4. They each put their block on one side of a [balance scale](https://www.google.com/search?q=balance+scale&tbm=isch), and the person whose block is heavier gets one point.
   5. Both  blocks are destroyed in a fire.
 
-Naomi doesn't want Ken to know that she isn't playing War; so when she is choosing which block to play, and what mass to tell Ken, she must make sure that the balance scale won't reveal that Chosen~Naomi ≠ Told~Naomi. In other words, she must make decisions so that:
+Naomi doesn't want Ken to know that she isn't playing War; so when she is choosing which block to play, and what mass to tell Ken, she must make sure that the balance scale won't reveal that Chosen~Naomi~ ≠ Told~Naomi~. In other words, she must make decisions so that:
 
-* Chosen~Naomi > ChosenKen if, and only if, Told~Naomi > Chosen~Ken, and
-* Told~Naomi is not equal to the mass of any of Ken's blocks, because he knows that isn't possible.
+* Chosen~Naomi~ > Chosen~Ken~ if, and only if, Told~Naomi~ > Chosen~Ken~, and
+* Told~Naomi~ is not equal to the mass of any of Ken's blocks, because he knows that isn't possible.
 
 It might seem like Naomi won't win any extra points by being deceitful, because Ken might discover that she wasn't playing War; but Naomi knows Ken thinks both players are playing War, and she knows what he knows, and she knows Ken will always follow his unique optimal strategy for War, so she can always predict what he will play.
 
