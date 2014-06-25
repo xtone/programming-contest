@@ -39,10 +39,12 @@ For each test case, output one line containing "Case #x: y", where x is the test
 
 1 ≤ **T** ≤ 100.
 0 ≤ **M** ≤ **N** * ( **N** - 1 ) / 2.
-Small dataset
+
+### Small dataset
 
 1 ≤ **N** ≤ 8.
-Large dataset
+
+### Large dataset
 
 1 ≤ **N** ≤ 50.
 
