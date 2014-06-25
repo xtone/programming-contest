@@ -38,7 +38,7 @@ For each test case, output one line containing "Case #x: y", where x is the test
 ## Limits
 
 1 ≤ **T** ≤ 100.
-0 ≤ **M** ≤ **N** * \(**N** - 1) / 2.
+0 ≤ **M** ≤ **N** * (\ **N** - 1) / 2.
 Small dataset
 
 1 ≤ **N** ≤ 8.
