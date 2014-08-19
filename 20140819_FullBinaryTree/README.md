@@ -16,7 +16,7 @@ The first line of the input gives the number of test cases, **T**. **T** test ca
 
 ## Output
 
-For each test case, output one line containing "Case #**x**: **y**", where **x** is the test case number (starting from 1) and **y** is the minimum number of nodes to delete from G to make a full binary tree.
+For each test case, output one line containing "Case \#**x**: **y**", where **x** is the test case number (starting from 1) and **y** is the minimum number of nodes to delete from G to make a full binary tree.
 
 ## Limits
 
