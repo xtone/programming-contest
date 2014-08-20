@@ -40,9 +40,9 @@ The first line of the input gives the number of test cases, **T**. **T** test ca
 
 ## Output
 
-For each test case, output one line containing "Case \#**x**: **y**", where **x** is the test case number (starting from 1) and **y** is the minimum number of nodes to delete from **G** to make a full binary tree.
+For each test case, output one line containing "Case \#x: **y**", where **x** is the test case number (starting from 1) and **y** is the minimum number of nodes to delete from **G** to make a full binary tree.
 
-各問題について、1行で "Case #x: **y**" と出力してください。**x** は1から始まる問題番号、 **y** は **G** を全二分木にするために削除しなければいけない節点の最小数です。
+各問題について、1行で "Case #x: **y**" と出力してください。 **x** は1から始まる問題番号、 **y** は **G** を全二分木にするために削除しなければいけない節点の最小数です。
 
 ## Limits
 
