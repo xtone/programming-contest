@@ -3,17 +3,15 @@
 ## Problem
 
 ※訳注:グラフ理論の専門用語をできるだけ忠実に訳しています。それぞれ日英対応は下記の通りです。
-|日本語  |English         |
-|--------|----------------|
-|頂点    |vertex          |
-|節点    |node            |
-|根      |root            |
-|辺      |edge            |
-|無向辺  |undirected edge |
-|木      |tree            |
-|連結木  |connected tree  |
-|根付き木|rooted tree     |
-|全二分木|full binary tree|
+頂点：vertex
+節点：node
+根：root
+辺：edge
+無向辺：undirected edge
+木：tree
+連結木：connected tree
+根付き木：rooted tree
+全二分木：full binary tree
 
 A tree is a connected graph with no cycles.
 
