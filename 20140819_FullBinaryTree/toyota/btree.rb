@@ -29,6 +29,9 @@ class BinaryTree
         smallest_node = root
       end
     }
+    if self.node_count == 2 then
+      smallest = 1
+    end
     puts "Case ##{case_num}: #{smallest}"
   end
 end
