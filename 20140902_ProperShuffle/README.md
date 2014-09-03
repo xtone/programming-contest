@@ -1,3 +1,5 @@
+出題元URL：https://code.google.com/codejam/contest/2984486/dashboard#s=p2
+
 Problem
 
 A permutation of size N is a sequence of N numbers, each between 0 and N-1, where each number appears exactly once. They may appear in any order.
