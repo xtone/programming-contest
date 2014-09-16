@@ -8,15 +8,15 @@ When she is bored, Mija sometimes likes to play a game with matrices. She tries 
 
 ミージャは暇なときに、マトリックスを使ってゲームをします。そのゲームとは、マトリックスを別のマトリックスに最小の手数で変換するというものです。このゲームにおいて1手でできるのは、マトリックスのある列と別の列を入れ替えることか、ある行と別の行を入れ替えることです。
 
-Today, Mija has a very special matrix **M**. **M** is a 2**N** by 2**N** matrix where every entry is either a 0 or a 1. Mija decides to try and transform **M** into a checkerboard matrix where the entries alternate between 0 and 1 along each row and column. Can you help Mija find the minimum number of moves to transform **M** into a checkerboard matrix?
+Today, Mija has a very special matrix **M**. **M** is a 2 **N** by 2 **N** matrix where every entry is either a 0 or a 1. Mija decides to try and transform **M** into a checkerboard matrix where the entries alternate between 0 and 1 along each row and column. Can you help Mija find the minimum number of moves to transform **M** into a checkerboard matrix?
 
-今日、ミージャは特別なマトリックス **M** を使うことにしました。 **M** は 2**N** x 2**N** のマトリクッスで、全ての値が0か1になっています。ミージャはこの **M** をチェッカーボード模様のマトリックスに変換することにしました。チェッカボード模様のマトリックスは0と1が行と列の両方で交互に出現するマトリクッスです。ミージャが **M** をチェッカボード模様のマトリックスに変換する最小の手数を探す手伝いをして下さい！
+今日、ミージャは特別なマトリックス **M** を使うことにしました。 **M** は 2 **N** x 2 **N** のマトリクッスで、全ての値が0か1になっています。ミージャはこの **M** をチェッカーボード模様のマトリックスに変換することにしました。チェッカボード模様のマトリックスは0と1が行と列の両方で交互に出現するマトリクッスです。ミージャが **M** をチェッカボード模様のマトリックスに変換する最小の手数を探す手伝いをして下さい！
 
 ## Input
 
-The first line of the input gives the number of test cases, **T**.  Each test case starts with a line containing a single integer: **N**. The next 2**N** lines each contain 2**N** characters which are the rows of **M**; each character is a 0 or 1.
+The first line of the input gives the number of test cases, **T**.  Each test case starts with a line containing a single integer: **N**. The next 2 **N** lines each contain 2 **N** characters which are the rows of **M**; each character is a 0 or 1.
 
-最初の行は問題の数 **T** が書いてあります。以下 **T** 個の問題が続きます。各問題の最初の行には1つの整数 **N** が書いてあります。次に 2**N** 行が続き、それぞれの行には 2**N** 個の0または1が書いてあります。これが **M** の各行となります。
+最初の行は問題の数 **T** が書いてあります。以下 **T** 個の問題が続きます。各問題の最初の行には1つの整数 **N** が書いてあります。次に 2 **N** 行が続き、それぞれの行には 2 **N** 個の0または1が書いてあります。これが **M** の各行となります。
 
 ## Output
 
@@ -32,7 +32,7 @@ For each test case, output one line containing "Case #x: **y**", where **x** is 
 
 1 ≤ **N** ≤ 10.
 
-##Large dataset
+## Large dataset
 
 1 ≤ **N** ≤ 1000.
 
