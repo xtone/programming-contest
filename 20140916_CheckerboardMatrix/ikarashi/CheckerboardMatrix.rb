@@ -3,7 +3,7 @@ def view(count, arr)
 	countOne=0
 	check=TRUE
 	lengthArray=Array.new(arr[0].size-1,"")
-	sortArray=Array.new(arr[0].size-1).map{Array.new(arr.size,'')}
+	sortArray=Array.new(arr[0].size-1)
 	count=0
 	checkSort=FALSE
 	first_even=0
@@ -44,7 +44,7 @@ def view(count, arr)
 		arraySize=id.size-2
 		for num in 0..arraySize
 			if num==0
-				sortArray[num][count]=id[num]
+				sortArray[count]=id[num]
 			end
 			lengthArray[num]+=id[num]
 			if count==0
@@ -122,20 +122,12 @@ def view(count, arr)
 			end
 			e=0
 			f=0
-			g=0
-			h=0
-			for num in 0..sortArray[0].size do
-				if sortArray[0][num]=="0"
+			for num in 0..sortArray.size do
+				if sortArray[num]=="0"
 					if num % 2==0
 						e+=1
 					else
 						f+=1
-					end
-				elsif sortArray[0][num]=="1"
-					if num % 2==0
-						g+=1
-					else
-						h+=1
 					end
 				end
 			end
@@ -146,7 +138,6 @@ def view(count, arr)
 			else
 				sortCount+=e
 			end
-#			print first_even.to_s + " " + first_odd.to_s + "e=" + e.to_s + "f= " + f.to_s + "g= " + g.to_s + "h= " + h.to_s
 			sortCount+=10
 			return sortCount
 		end
