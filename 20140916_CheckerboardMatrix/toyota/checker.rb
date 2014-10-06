@@ -79,45 +79,57 @@ class Matrix
       puts "Case ##{case_number}: IMPOSSIBLE"
       return false
     end
+    # self.print
 
-    # 左上0の場合
-    count = self.solve_count(0)
+    # 左上0の場合、行から
+    count1 = self.solve_count(0, 0)
     self.reset
-    # 左上1の場合
-    count_2 = self.solve_count(1)
+    # 左上0の場合、列から
+    count2 = self.solve_count(0, 1)
+    self.reset
+    # 左上1の場合、行から
+    count3 = self.solve_count(1, 0)
+    self.reset
+    # 左上1の場合、列から
+    count4 = self.solve_count(1, 1)
 
-    puts "Case ##{case_number}: #{[count, count_2].min}"
+    puts "Case ##{case_number}: #{[count1, count2, count3, count4].min}"
     return true
   end
 
-  def solve_count(left)
+  def solve_count(left, direction)
     # 行の入れ替え
     count = 0
-    (@n * 2).times do |i|
-      if self[i, 0].to_i != i % 2 then
-        # puts "row #{i}: #{self[i, 0]}"
-        (i+1..@n*2-1).select { |x| x % 2 == (i+1) % 2 }.each { |j|
-          if self[j, 0].to_i == i % 2 then
-            # puts "exchange_row #{j} #{self[j, 0]}"
-            self.exchange_row(i, j)
-            count += 1
-            break
+    2.times do |d|
+      if d + direction % 2 == 0 then
+        (@n * 2).times do |i|
+          if self[i, 0].to_i != i % 2 then
+            # puts "row #{i}: #{self[i, 0]}"
+            (i+1..@n*2-1).select { |x| x % 2 == (i+1) % 2 }.each { |j|
+              if self[j, 0].to_i == i % 2 then
+                # puts "exchange_row #{j} #{self[j, 0]}"
+                self.exchange_row(i, j)
+                count += 1
+                break
+              end
+            }
           end
-        }
-      end
-    end
-    # 列の入れ替え
-    (@n * 2).times do |i|
-      if self[0, i].to_i != i % 2 then
-        # puts "column #{i}: #{self[0, i]}"
-        (i+1..@n*2-1).select { |x| x % 2 == (i+1) % 2 }.each { |j|
-          if self[0, j].to_i == i % 2 then
-            # puts "exchange_column #{j} #{self[0, j]}"
-            self.exchange_column(i, j)
-            count += 1
-            break
+        end
+      else
+        # 列の入れ替え
+        (@n * 2).times do |i|
+          if self[0, i].to_i != i % 2 then
+            # puts "column #{i}: #{self[0, i]}"
+            (i+1..@n*2-1).select { |x| x % 2 == (i+1) % 2 }.each { |j|
+              if self[0, j].to_i == i % 2 then
+                # puts "exchange_column #{j} #{self[0, j]}"
+                self.exchange_column(i, j)
+                count += 1
+                break
+              end
+            }
           end
-        }
+        end
       end
     end
     count
