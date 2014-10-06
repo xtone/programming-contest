@@ -5,7 +5,6 @@ def view(count, arr)
 	lengthArray=Array.new(arr[0].size-1,"")
 	sortArray=Array.new(arr[0].size-1)
 	count=0
-	checkSort=FALSE
 	first_even=0
 	first_odd=0
 	
@@ -68,11 +67,6 @@ def view(count, arr)
 		unless countOne==(id.size/2)
 			check=FALSE
 			return 3
-		end
-		if id.scan(/01/).size == id.size/2
-		elsif id.scan(/10/).size == id.size/2
-		else
-			checkSort=TRUE
 		end
 		count+=1
 	end
@@ -150,9 +144,6 @@ pCount=0
 pLineCount=0
 problemCount=0
 pArr=[]
-c_ok=0
-sort=0
-impossible=0
 while argv = ARGF.gets
 	if ARGF.file.lineno != 1
 		if pLineCount==0 then
@@ -166,13 +157,10 @@ while argv = ARGF.gets
 				result=view(pCount,pArr)		
 				pCount+=1
 				if result==1
-					c_ok+=1
 					print "Case #" + pCount.to_s + ": 0" + "\n" 
 				elsif result==3
-					impossible+=1
 					print "Case #" + pCount.to_s + ": IMPOSSIBLE" + "\n" 
 				else
-					sort+=1
 					result-=10
 					print "Case #" + pCount.to_s + ": " + result.to_s  + "\n" 
 				end
