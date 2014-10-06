@@ -3,13 +3,58 @@ def view(count, arr)
 	countOne=0
 	check=TRUE
 	lengthArray=Array.new(arr[0].size-1,"")
-	sortArray=Array.new(arr[0].size-1).map{Array.new(arr.size,'')}
+	sortArray=Array.new(arr[0].size-1)
 	count=0
+	first_even=0
+	first_odd=0
+	
+	#Sort対象
+	check1=""
+	check2=""
+	ch1_num=0
+	ch2_num=0
+	for id in arr do
+		if check1 == ""
+			check1=id
+		elsif check2 == ""
+			if check1!=id
+				check2=id
+			end
+		end
+		if check1 != ""
+			if check1==id
+				ch1_num+=1
+			else
+				if check2 != ""
+					if check2==id
+						ch2_num+=1
+					else
+						return 3
+					end
+				end
+			end
+		end
+	end
+	if ch1_num!=ch2_num 
+		return 3
+	end
+	
 	for id in arr do
 		arraySize=id.size-2
 		for num in 0..arraySize
-			sortArray[count][num]=id[num]
+			if num==0
+				sortArray[count]=id[num]
+			end
 			lengthArray[num]+=id[num]
+			if count==0
+				if id[num]=="0"
+					if num%2==0
+						first_even+=1
+					else
+						first_odd+=1
+					end
+				end
+			end
 		end
 		countZero = id.scan(/0/).size
 		countOne  = id.scan(/1/).size
@@ -17,128 +62,76 @@ def view(count, arr)
 		
 		unless countZero==(id.size/2)
 			check=FALSE
+			return 3
 		end
 		unless countOne==(id.size/2)
-			check=FALSE	
+			check=FALSE
+			return 3
 		end
 		count+=1
 	end
+	
+	count=0
 	for char in lengthArray do
 		countZero = char.scan(/0/).size
 		countOne  = char.scan(/1/).size
 
 		unless countZero==(char.size/2)
 			check=FALSE
-	        end
-	       	unless countOne==(char.size/2)
-			check=FALSE
-		end
-	end
-	if check==TRUE
-		check1=""
-		check2=""
-		c1_num=0
-		c2_num=0
-		lineArr=[]
-		for id in arr do
-			if check1 == ""	
-				check1=id
-			elsif check2 == ""
-				if check1!=id
-					check2=id
-				end
-			end
-			if check1 != ""
-				if check1==id
-					c1_num+=1
-					lineArr.push(1)
-				else
-					if check2 != ""
-						if check2==id
-							c2_num+=1
-							lineArr.push(2)	
-						else
-							return 3
-						end
-					end
-				end
-			end
-		end
-		if c1_num!=arr.size/2 && c2_num!=arr.size/2
 			return 3
 		end
-		for id in arr
-			if id.scan(/01/).size==id.size/2
-			elsif id.scan(/10/).size==id.size/2
+		unless countOne==(char.size/2)
+			check=FALSE
+			return 3
+		end
+		count+=1
+	end
+	if check==TRUE
+		for id in arr do
+			if id.scan(/01/).size == id.size/2
+			elsif id.scan(/10/).size == id.size/2
 			else
 				check=FALSE
+				break
 			end
 		end
-		for id in lengthArray do
-			
-			if id.scan(/01/).size==id.size/2
-			elsif id.scan(/10/).size==id.size/2
+		for char in lengthArray do
+			if char.scan(/01/).size == char.size/2
+			elsif char.scan(/10/).size == char.size/2
 			else
 				check=FALSE
+				break
 			end
 		end
 		if check==TRUE
 			return 1
 		else
-		      	#Sort対象
-                	sortCount=0      
-			a=0
-                      	b=0
-                      	c=0
-                      	d=0
-                      	for num in 0..lineArr.size do
-				if lineArr[num]==1
-					if num % 2 ==0
-                        			a+=1
-                       	 		else
-                       	 			b+=1
-                       		 	end
-                        	elsif lineArr[num]==2
-                        		if num % 2 ==0
-                                		c+=1
-                                	else
-                                		d+=1
-                        	        end
-                        	end
-			end
-			if a==b
-				sortCount=a
-			elsif a > b
-				sortCount=b	
+			sortCount=0
+			if first_even==first_odd
+				sortCount=first_even
+			elsif first_even > first_odd
+				sortCount=first_odd
 			else
-				sortCount=a
+				sortCount=first_even
 			end
 			e=0
 			f=0
-			g=0
-			h=0
-			for num in 0..sortArray[0].size do
-				if sortArray[0][num]=="0"
+			for num in 0..sortArray.size do
+				if sortArray[num]=="0"
 					if num % 2==0
 						e+=1
 					else
 						f+=1
 					end
-				elsif sortArray[0][num]=="1"
-					if num % 2==0
-						g+=1
-					else
-						h+=1
-					end
 				end
 			end
 			if e==f
-                                sortCount+=e
-                        elsif e > f
-                                sortCount+=f
-                        else
-                                sortCount+=e
-                        end
+				sortCount+=e
+			elsif e > f
+				sortCount+=f
+			else
+				sortCount+=e
+			end
 			sortCount+=10
 			return sortCount
 		end
@@ -151,9 +144,6 @@ pCount=0
 pLineCount=0
 problemCount=0
 pArr=[]
-c_ok=0
-sort=0
-impossible=0
 while argv = ARGF.gets
 	if ARGF.file.lineno != 1
 		if pLineCount==0 then
@@ -167,23 +157,15 @@ while argv = ARGF.gets
 				result=view(pCount,pArr)		
 				pCount+=1
 				if result==1
-					c_ok+=1
 					print "Case #" + pCount.to_s + ": 0" + "\n" 
 				elsif result==3
-					impossible+=1
 					print "Case #" + pCount.to_s + ": IMPOSSIBLE" + "\n" 
 				else
-					sort+=1
 					result-=10
 					print "Case #" + pCount.to_s + ": " + result.to_s  + "\n" 
 				end
 				pArr=[]
 			end	
 		end
-
-#		print argv
-#		result = sprintf "%.7f", check(argv.split.map(&:to_f))
-#		print "Case #" + (ARGF.file.lineno - 1).to_s + ": " + result + "\n" 
 	end
 end
-#print "OK:" + c_ok.to_s + " Sort:" + sort.to_s + " NG:" + impossible.to_s + "\n"
