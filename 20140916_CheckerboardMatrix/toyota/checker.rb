@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 class Matrix
   attr_accessor :matrix
 
   def initialize(n)
     @n = n
     @matrix = ''
+    @initial_matrix = ''
     @cursor = 0
   end
 
@@ -13,7 +15,12 @@ class Matrix
     end
 
     @matrix << str
+    @initial_matrix << str
     @cursor += 1
+  end
+
+  def reset
+    @matrix = @initial_matrix
   end
 
   def exchange_row(a, b)
@@ -72,8 +79,48 @@ class Matrix
       puts "Case ##{case_number}: IMPOSSIBLE"
       return false
     end
-    puts "Case ##{case_number}: "
+
+    # 左上0の場合
+    count = self.solve_count(0)
+    self.reset
+    # 左上1の場合
+    count_2 = self.solve_count(1)
+
+    puts "Case ##{case_number}: #{[count, count_2].min}"
     return true
+  end
+
+  def solve_count(left)
+    # 行の入れ替え
+    count = 0
+    (@n * 2).times do |i|
+      if self[i, 0].to_i != i % 2 then
+        # puts "row #{i}: #{self[i, 0]}"
+        (i+1..@n*2-1).select { |x| x % 2 == (i+1) % 2 }.each { |j|
+          if self[j, 0].to_i == i % 2 then
+            # puts "exchange_row #{j} #{self[j, 0]}"
+            self.exchange_row(i, j)
+            count += 1
+            break
+          end
+        }
+      end
+    end
+    # 列の入れ替え
+    (@n * 2).times do |i|
+      if self[0, i].to_i != i % 2 then
+        # puts "column #{i}: #{self[0, i]}"
+        (i+1..@n*2-1).select { |x| x % 2 == (i+1) % 2 }.each { |j|
+          if self[0, j].to_i == i % 2 then
+            # puts "exchange_column #{j} #{self[0, j]}"
+            self.exchange_column(i, j)
+            count += 1
+            break
+          end
+        }
+      end
+    end
+    count
   end
 
   def self.goal_matrix(n, start=0)
@@ -144,5 +191,5 @@ File::open(filename) { |file|
       end
     end
   }
-  puts "impossible_count: #{impossible_count}"
+  # puts "impossible_count: #{impossible_count}"
 }
