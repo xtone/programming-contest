@@ -10,11 +10,43 @@
 -author("toyota").
 
 %% API
--export([is_valid/1, check_edge/3, check_character/4, list_length/1, list_length_rec/2, check_car/4, get_first_and_last_per_char/4]).
+-export([is_valid/1, factorial/2, calc_comp/3, check_edge/3, check_character/4, list_length/1, list_length_rec/2, check_car/4, get_first_and_last_per_char/4]).
 
 is_valid(CarList) ->
   Mid = check_character("abcdefghijklmnopqrstuvwxyz", CarList, 0, []),
-  {Loop, LeftEdge, RightEdge} = check_edge(CarList, Mid, {[], [], []}).
+  EdgeInfo = check_edge(CarList, Mid, {[], [], []}),
+  Result = calc_comp("abcdefghijklmnopqrstuvwxyz", EdgeInfo, {1,})
+
+calc_comp([], _, Result) ->
+  Result;
+calc_comp(Characters, EdgeInfo, Result) ->
+  {Loop, LeftEdge, RightEdge} = EdgeInfo,
+  {Answer, Comps} = Result,
+  LeftEdgeListLength = list_length(proplists:get_value(hd(Characters), LeftEdge, [])),
+  if LeftEdgeListLength > 1 ->
+    throw(invalid);
+    true ->
+      ok
+  end,
+  RightEdgeListLength = list_length(proplists:get_value(hd(Characters), RightEdge, [])),
+  if RightEdgeListLength > 1 ->
+    throw(invalid);
+    true ->
+      ok
+  end,
+  _Answer = Answer * factorial(proplists:get_value(hd(Characters), Loop, 0), 1) rem 1000000007,
+  CondCompAdd = proplists:is_defined(hd(Characters), LeftEdge) =/= true, proplists:is_defined(hd(Characters), RightEdge) =/= true, proplists:is_defined(hd(Characters), Loop) =:= true,
+  if CondCompAdd =:= true ->
+    _Comps = Comps + 1;
+    true ->
+      _Comps = Comps
+  end,
+  calc_comp(tl(Characters), EdgeInfo, {_Answer, _Comps}).
+
+factorial(0, Result) ->
+  Result * 1;
+factorial(N, Result) ->
+  factorial(N-1, Result * N rem 1000000007).
 
 check_edge([], _, Result) ->
   Result;
@@ -33,7 +65,7 @@ check_edge(CarList, Mid, Result) ->
       if CarHead =:= CarTail ->
         HeadIncludeLoop = proplists:is_defined(CarHead, Loop),
         if HeadIncludeLoop =:= true ->
-          _Loop = lists:keyreplace(CarHead, 1, Loop, proplists:get_value(CarHead, Loop) + 1);
+          _Loop = lists:keyreplace(CarHead, 1, Loop, proplists:get_value(CarHead, Loop, 0) + 1);
           true ->
             _Loop = [{CarHead, 1}]
         end,
@@ -41,13 +73,13 @@ check_edge(CarList, Mid, Result) ->
         CarHead =/= CarTail ->
           HeadIncludeEdge = proplists:is_defined(CarHead, LeftEdge),
           if HeadIncludeEdge =:= true->
-            _LeftEdge = lists:keyreplace(CarHead, 1, LeftEdge, [CarTail | proplists:get_value(CarHead, LeftEdge)]);
+            _LeftEdge = lists:keyreplace(CarHead, 1, LeftEdge, [CarTail | proplists:get_value(CarHead, LeftEdge, [])]);
             true ->
               _LeftEdge = [{CarHead, [CarTail]}, LeftEdge]
           end,
           TailIncludeEdge = proplists:is_defined(CarTail, RightEdge),
           if TailIncludeEdge =:= true ->
-            _RightEdge = lists:keyreplace(CarTail, 1, RightEdge, [CarHead | proplists:get_value(CarTail, RightEdge)]);
+            _RightEdge = lists:keyreplace(CarTail, 1, RightEdge, [CarHead | proplists:get_value(CarTail, RightEdge, [])]);
             true ->
               _RightEdge = [{CarTail, [CarHead]}, RightEdge]
           end,

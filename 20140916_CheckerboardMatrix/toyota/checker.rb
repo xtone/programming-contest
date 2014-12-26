@@ -60,15 +60,25 @@ class Matrix
   def can_solve?
     row = Array.new @n * 2, ''
     column = Array.new @n * 2, ''
+    row_count = Array.new @n * 2, 0
+    column_count = Array.new @n * 2, 0
     (@n * 2).times do |i|
       (@n * 2).times do |j|
         row[i] += self[i, j]
         column[j] += self[i, j]
+        if self[i, j] == '0' then
+          row_count[i] += 1
+          column_count[j] += 1
+        end
       end
     end
     if row.uniq.length != 2 then
       return false
     elsif column.uniq.length != 2 then
+      return false
+    elsif row_count.select { |i| i == @n }.length != row_count.length then
+      return false
+    elsif column_count.select { |i| i == @n }.length != column_count.length then
       return false
     end
     true
