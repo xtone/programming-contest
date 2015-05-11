@@ -63,7 +63,6 @@ Temporary Items
 .idea
 *.iml
 
-# Input & output files
-*.in
+# output file
 *.out
 
