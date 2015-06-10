@@ -3,20 +3,14 @@ import sys
 import itertools
 
 def check(array,x):
-	checkFlag = False
-	while checkFlag == False:
+	while True:
 		if x in array:
 			x = array.index(x)
 			x += 1
 			if x == 1:
-				checkFlag = True
-				break
+				return 1
 		else:
-			break
-	if checkFlag:
-		return 1
-	else:
-		return 0
+			return 0
 def solve(x):
 	arrayData = []
 	for num in range(2,int(x)):

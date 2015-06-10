@@ -41,6 +41,7 @@ def view(count, arr)
 			changeWall = Hash.new()
 		end	
 		check_flag = false
+#		wall[nomad]=nomad_data[nomad]
 		for pos in nomad_data[nomad][1]...nomad_data[nomad][2] do
 			if wall[pos] then
 				if wall[pos] < nomad_data[nomad][3] then
@@ -75,7 +76,6 @@ def view(count, arr)
 				check_flag = true
 			end
 		end
-
 		before = nomad_data[nomad][0]
 		if check_flag then
 			s_count += 1
