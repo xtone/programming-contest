@@ -22,16 +22,12 @@ def solve(x):
 			ans += check(element,len(element)+1)
 		array_len -= 1
 	ans += 1
-	return ans % 100003
+	return ans %100003
 	
 argvs = sys.argv
 argc = len(argvs)
-
 fp = open(argvs[1], 'r')
-count = 0
-for line in fp.readlines():
-	if count != 0:
-		result = solve(line.strip())
-		print "Case #" + str(count) + ": " + str(result)
-	count += 1
+count = int(fp.readline())
+for no in range(1,count + 1):
+	print "Case #" + str(no) + ": " + str(solve(fp.readline()))
 fp.close()
