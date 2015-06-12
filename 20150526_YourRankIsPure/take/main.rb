@@ -3,6 +3,7 @@ require 'pp'
 casecount = 0
 cases = []
 MEMO = {}
+CMEMO = {}
 
 def dp(params)
 	#pp params
@@ -31,14 +32,17 @@ open( ARGV[0] ) {|f|
 }
 
 def _solve(n, t)
+	return 1 if n <= t || t-2 <= 0
 	key = "#{n}_#{t}"
 	return MEMO[key] if MEMO.include?(key)
-	return 1 if n <= t || t-2 <= 0
 	ans = 0
 	for m in (0..t-2)
 		dp [n, t, m]
-		break if n-t-1 < m
-		a = (n-t-1).combination(m) * _solve(t, t-m-1)
+		c = n-t-1
+		break if c < m
+		ckey = "#{c}_#{m}"
+		CMEMO[ckey] = c.combination(m) if !CMEMO.include?(ckey)
+		a = CMEMO[ckey] * _solve(t, t-m-1)
 		dp ["_solve", a]
 		ans += a
 	end
