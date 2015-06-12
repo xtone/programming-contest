@@ -37,7 +37,8 @@ class PickingUpChicks
           chicks << Chick.new(x[nn], v[nn])
         end
         # クレーン使用回数の最大は、N羽の鶏のうちの2羽の組み合わせの総数
-        (n*(n-1)/2).times do |s|
+        # 0回の場合を含めるので、+1する
+        (n*(n-1)/2 + 1).times do |s|
           if solved = solve(n, k, b, t, deep_copy(chicks), s)
             output i+1, s
             break
@@ -67,17 +68,19 @@ class PickingUpChicks
       chicks.each do |chick|
         chick.run
       end
-      # 前を行く鶏を追い越していたら、その位置まで戻す。
+      # 1つ前を行く鶏を追い越していたら、その位置まで戻す。
       # クレーン使用回数が残っていれば、それを消費して鶏の順序を入れ替え、上記の処理をスキップする。
-      n.times do |nn|
-        next if nn == n - 1
-        if chicks[nn+1].x < chicks[nn].x
-          if 0 < s
-            s -= 1
-            chicks[nn], chicks[nn+1] = chicks[nn+1], chicks[nn]
-            next
+      if 1 < n
+        (n-2).downto(0) do |nn|
+          nn.upto(n-1) do |mm|
+            next if chicks[nn].x <= chicks[mm].x
+            if 0 < s
+              s -= 1
+              chicks[nn], chicks[mm] = chicks[mm], chicks[nn]
+            else
+              chicks[nn].x = chicks[mm].x
+            end
           end
-          chicks[nn].x = chicks[nn+1].x
         end
       end
       # 現在位置チェック(debug)
