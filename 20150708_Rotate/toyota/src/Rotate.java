@@ -121,6 +121,8 @@ public class Rotate {
     }
 
     public String check(String[] field) {
+        CheckWinCondition cond = new CheckWinCondition(lines);
+
         // 左→上チェック
         int currentRed = 0;
         int currentBlue = 0;
@@ -130,229 +132,110 @@ public class Rotate {
         for (int i=lines-1; i<rows; i++) {
             for (int j=0; j<i+1; j++) {
                 char c = field[i-j].charAt(j);
-                if (last != '.' && c == last) {
-                    if (c == 'R') {
-                        currentRed += 1;
-                        if (currentRed >= lines) {
-                            redWin = true;
-                        }
-                    } else {
-                        currentBlue += 1;
-                        if (currentBlue >= lines) {
-                            blueWin = true;
-                        }
-
-                    }
-                } else {
-                    if (c == 'R') {
-                        currentRed = 1;
-                        currentBlue = 0;
-                    } else if (c == 'B') {
-                        currentRed = 0;
-                        currentBlue = 1;
-                    } else {
-                        currentRed = 0;
-                        currentBlue = 0;
-                    }
-                }
-                last = c;
+                cond.update(c);
             }
-            last = '.';
-            currentBlue = 0;
-            currentRed = 0;
+            cond.reset();
         }
 
         // 下→右チェック
         for (int i=0; i<rows-lines+1; i++) {
             for (int j=i; j<rows; j++) {
-                char c = field[rows-1-j+i].charAt(j);
-                if (last != '.' && c == last) {
-                    if (c == 'R') {
-                        currentRed += 1;
-                        if (currentRed >= lines) {
-                            redWin = true;
-                        }
-                    } else {
-                        currentBlue += 1;
-                        if (currentBlue >= lines) {
-                            blueWin = true;
-                        }
-
-                    }
-                } else {
-                    if (c == 'R') {
-                        currentRed = 1;
-                        currentBlue = 0;
-                    } else if (c == 'B') {
-                        currentRed = 0;
-                        currentBlue = 1;
-                    } else {
-                        currentRed = 0;
-                        currentBlue = 0;
-                    }
-                }
-                last = c;
+                char c = field[rows - 1 - j + i].charAt(j);
+                cond.update(c);
             }
-            last = '.';
-            currentBlue = 0;
-            currentRed = 0;
+            cond.reset();
         }
 
         // 左→下チェック
         for (int i=0; i<rows-lines+1; i++) {
             for (int j=0; j<rows-i; j++) {
-                char c = field[i+j].charAt(j);
-                if (last != '.' && c == last) {
-                    if (c == 'R') {
-                        currentRed += 1;
-                        if (currentRed >= lines) {
-                            redWin = true;
-                        }
-                    } else {
-                        currentBlue += 1;
-                        if (currentBlue >= lines) {
-                            blueWin = true;
-                        }
-
-                    }
-                } else {
-                    if (c == 'R') {
-                        currentRed = 1;
-                        currentBlue = 0;
-                    } else if (c == 'B') {
-                        currentRed = 0;
-                        currentBlue = 1;
-                    } else {
-                        currentRed = 0;
-                        currentBlue = 0;
-                    }
-                }
-                last = c;
+                char c = field[i + j].charAt(j);
+                cond.update(c);
             }
-            last = '.';
-            currentBlue = 0;
-            currentRed = 0;
+            cond.reset();
         }
 
         // 上→右チェック
         for (int i=0; i<rows-lines+1; i++) {
             for (int j=0; j<rows-i; j++) {
                 char c = field[j].charAt(i+j);
-                if (last != '.' && c == last) {
-                    if (c == 'R') {
-                        currentRed += 1;
-                        if (currentRed >= lines) {
-                            redWin = true;
-                        }
-                    } else {
-                        currentBlue += 1;
-                        if (currentBlue >= lines) {
-                            blueWin = true;
-                        }
-
-                    }
-                } else {
-                    if (c == 'R') {
-                        currentRed = 1;
-                        currentBlue = 0;
-                    } else if (c == 'B') {
-                        currentRed = 0;
-                        currentBlue = 1;
-                    } else {
-                        currentRed = 0;
-                        currentBlue = 0;
-                    }
-                }
-                last = c;
+                cond.update(c);
             }
-            last = '.';
-            currentBlue = 0;
-            currentRed = 0;
+            cond.reset();
         }
 
         // 横チェック
         for (int i=0; i<field.length; i++) {
             for (int j=0; j<field.length; j++) {
                 char c = field[i].charAt(j);
-                if (last != '.' && c == last) {
-                    if (c == 'R') {
-                        currentRed += 1;
-                        if (currentRed >= lines) {
-                            redWin = true;
-                        }
-                    } else {
-                        currentBlue += 1;
-                        if (currentBlue >= lines) {
-                            blueWin = true;
-                        }
-
-                    }
-                } else {
-                    if (c == 'R') {
-                        currentRed = 1;
-                        currentBlue = 0;
-                    } else if (c == 'B') {
-                        currentRed = 0;
-                        currentBlue = 1;
-                    } else {
-                        currentRed = 0;
-                        currentBlue = 0;
-                    }
-                }
-                last = c;
+                cond.update(c);
             }
-            last = '.';
-            currentBlue = 0;
-            currentRed = 0;
+            cond.reset();
         }
 
         // 縦チェック
         for (int i=0; i<field.length; i++) {
             for (int j=0; j<field.length; j++) {
                 char c = field[j].charAt(i);
-                if (last != '.' && c == last) {
-                    if (c == 'R') {
-                        currentRed += 1;
-                        if (currentRed >= lines) {
-                            redWin = true;
-                        }
-                    } else {
-                        currentBlue += 1;
-                        if (currentBlue >= lines) {
-                            blueWin = true;
-                        }
-
-                    }
-                } else {
-                    if (c == 'R') {
-                        currentRed = 1;
-                        currentBlue = 0;
-                    } else if (c == 'B') {
-                        currentRed = 0;
-                        currentBlue = 1;
-                    } else {
-                        currentRed = 0;
-                        currentBlue = 0;
-                    }
-                }
-                last = c;
+                cond.update(c);
             }
-            last = '.';
-            currentBlue = 0;
-            currentRed = 0;
+            cond.reset();
         }
 
+        return cond.getResult();
+    }
+}
 
-        if (redWin && blueWin) {
+class CheckWinCondition {
+    public static final int RED_WIN = 0b01;
+    public static final int BLUE_WIN = 0b10;
+
+    private final int winLength;
+
+    private int winStatus = 0;
+
+    private char last = '.';
+    private int lineLength = 0;
+
+    public CheckWinCondition(int winLength) {
+        this.winLength = winLength;
+    }
+
+    public void update(char c) {
+        if (last != '.' && c == last) {
+            lineLength += 1;
+            if (lineLength >= winLength) {
+                if (c == 'R') {
+                    winStatus |= RED_WIN;
+                } else {
+                    winStatus |= BLUE_WIN;
+                }
+            }
+        } else {
+            if (c == '.') {
+                lineLength = 0;
+            } else {
+                lineLength = 1;
+            }
+        }
+        last = c;
+    }
+
+    public void reset() {
+        last = '.';
+        lineLength = 0;
+    }
+
+    public String getResult() {
+        if (winStatus == (RED_WIN | BLUE_WIN)) {
             return "Both";
-        } else if (redWin) {
+        } else if (winStatus == RED_WIN) {
             return "Red";
-        } else if (blueWin) {
+        } else if (winStatus == BLUE_WIN) {
             return "Blue";
         } else {
             return "Neither";
         }
-
     }
 }
 
